@@ -6,8 +6,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const wait = (timeout) => {
   return new Promise(resolve => {
-    setTimeout(resolve, timeout);
-  });
+    setTimeout(resolve, timeout)
+  ;});
 }
 
 export default function App() {
@@ -56,7 +56,7 @@ export default function App() {
   }).catch()
 }
 
-function validacion_campo_nombre(nombre){
+function validacion_nombre(nombre){
     const solo_texto = /[a-zA-ZÁ-ÿ\s]+$/
     if (solo_texto.test(nombre)) {
       console.log("Validacion 1")
@@ -66,7 +66,7 @@ function validacion_campo_nombre(nombre){
   }
 }
 
-function Validacion_campo_precio(precio){
+function Validacion_precio(precio){
   const solo_numero = /[0-9\s]+$/
   if (solo_numero.test(precio)) {
     console.log("Validacion 3")
@@ -120,7 +120,7 @@ function HomeScreen({}){
         <TextInput style ={Validacion_nombre ? [styles.cuadrotexto_bien]:[styles.cuadrotexto_mal]}
         name="nombre"
         placeholder="Nombre"
-        onChangeText={nombre=>validacion_campo_nombre(nombre)}
+        onChangeText={nombre=>validacion_nombre(nombre)}
         />
         </View>
         
@@ -128,7 +128,7 @@ function HomeScreen({}){
         <Text style={{color: 'black', padding: 10}}>Precio:</Text>
         <TextInput style ={Validacion_precio ? [styles.cuadrotexto_bien]:[styles.cuadrotexto_mal]}
         placeholder="0"
-        onChangeText={precio=>Validacion_campo_precio(precio)}
+        onChangeText={precio=>Validacion_precio(precio)}
         />
         </View>
       
